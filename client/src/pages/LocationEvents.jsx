@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import Event from '../components/Event'
+import LocationsAPI from '../services/LocationsAPI';
 import '../css/LocationEvents.css'
 
 const LocationEvents = ({index}) => {
     const [location, setLocation] = useState([])
     const [events, setEvents] = useState([])
+
+    useEffect(()=>{
+        (async ()=>{
+            try{
+                const locationData = await LocationsAPI.getLocationByID(index)
+                setLocation(locationData);
+            } catch(err){
+                throw err
+            }
+        }) ()
+    }, [])
 
     return (
         <div className='location-events'>
@@ -15,7 +27,7 @@ const LocationEvents = ({index}) => {
 
                 <div className='location-info'>
                     <h2>{location.name}</h2>
-                    <p>{location.address}, {location.city}, {location.state} {location.zip}</p>
+                    <p>{location.address}, {location.city}, {location.state}</p>
                 </div>
             </header>
 
