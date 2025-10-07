@@ -14,8 +14,8 @@ The following **required** functionality is completed:
 
 - [x] **The web app uses React to display data from the API**
 - [x] **The web app is connected to a PostgreSQL database, with an appropriately structured Events table**
-  - [ ]  **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [ ]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
+  - [x]  **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 - [x] **The web app displays a title.**
 - [x] **Website includes a visual interface that allows users to select a location they would like to view.**
   - [x] *Note: A non-visual list of links to different locations is insufficient.* 
@@ -24,8 +24,8 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] An additional page shows all possible events
-  - [ ] Users can sort *or* filter events by location.
+- [x] An additional page shows all possible events
+  - [x] Users can sort *or* filter events by location.
 - [x] Events display a countdown showing the time remaining before that event
   - [x] Events appear with different formatting when the event has passed (ex. negative time, indication the event has passed, crossed out, etc.).
 
@@ -37,10 +37,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./codepath assignment3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  GIF tool here
+GIF created with ...  LICEcap
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows

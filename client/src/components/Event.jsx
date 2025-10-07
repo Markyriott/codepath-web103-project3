@@ -51,7 +51,7 @@ const Event = (props) => {
 
         const totalMonths = years * 12 + months;
 
-        return(`${isPassed ? -totalMonths : totalMonths} months, ${isPassed ? -days : days} days`)
+        return(`${isPassed ? -totalMonths : totalMonths} months, ${isPassed ? -days : days} days ${isPassed ? 'ago' : 'until'}`);
     }
 
     // useEffect(() => {
@@ -89,7 +89,7 @@ const Event = (props) => {
                 <div className='text'>
                     <h3>{event.title}</h3>
                     <p><i className="fa-regular fa-calendar fa-bounce"></i> {date} <br /> {time}</p>
-                    <p id={`remaining-${event.id}`}>{`Time until event: ${remaining}`}</p>
+                    <p id={`remaining-${event.id}`}>{remaining}</p>
                 </div>
             </div>
         </article>
