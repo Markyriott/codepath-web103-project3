@@ -10,8 +10,11 @@ const LocationEvents = ({index}) => {
     useEffect(()=>{
         (async ()=>{
             try{
-                const locationData = await LocationsAPI.getLocationByID(index)
+                const locationData = await LocationsAPI.getLocationByID(index);
                 setLocation(locationData);
+                
+                const locationEvents = await LocationsAPI.getLocationEvents(index);
+                setEvents(locationEvents);
             } catch(err){
                 throw err
             }
@@ -39,7 +42,6 @@ const LocationEvents = ({index}) => {
                             id={event.id}
                             title={event.title}
                             date={event.date}
-                            time={event.time}
                             image={event.image}
                         />
                     ) : <h2><i className="fa-regular fa-calendar-xmark fa-shake"></i> {'No events scheduled at this location yet!'}</h2>

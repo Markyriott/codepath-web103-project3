@@ -18,4 +18,14 @@ const getLocationByID = async (id)=> {
     }
 }
 
-export default { getAllLocations, getLocationByID }
+const getLocationEvents = async(id)=>{
+    try{
+        const res = await fetch(`api/locations/${id}/events`);
+        const data = await res.json();
+        return data;
+    } catch (err){
+        console.log('Error fetching data', err);
+    }
+}
+
+export default { getAllLocations, getLocationByID, getLocationEvents }

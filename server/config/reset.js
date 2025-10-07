@@ -1,5 +1,6 @@
 import { pool } from './database.js';
 import locationData from '../data/locations.js';
+import eventsData from '../data/events.js';
 
 const createTables = async () => {
     await pool.query(`DROP TABLE IF EXISTS events;`);    
@@ -57,6 +58,27 @@ const seedTables = async ()=>{
             }
     
             console.log('successfully added location', location.name)
+        })
+    })
+
+    eventsData.forEach((event) =>{
+        const insertQuery = {
+            text: 'INSERT INTO events (location, title, date, image) VALUES ($1, $2, $3, $4);'
+        };
+
+        const values = [
+            event.location,
+            event.title,
+            event.date,
+            event.image
+        ];
+
+        pool.query(insertQuery, values, (err, res) => {
+            if (err) {
+                console.error('error inserting event', err);
+                return;
+            }
+            console.log('Successfully added event', event.title);
         })
     })
 

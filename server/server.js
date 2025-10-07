@@ -10,7 +10,7 @@ import locationsRouter from './routes/locations.js';
 
 
 
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: '../.env'} );
 
 const PORT = process.env.PORT || 3000
 
